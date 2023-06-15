@@ -1,0 +1,56 @@
+<html>
+
+<head>
+	<style>
+		.div1 {
+			border: 2px solid pink;
+			width: 380px;
+			margin: 100;
+		}
+	</style>
+
+	<script>
+		const count1 = () => {
+			let count = document.getElementById("text").value.length;
+
+			if (count > 12)
+			{
+				alert("not valid");
+			} else
+			{
+				alert("valid");
+			}
+		}
+	</script>
+
+</head>
+
+<body>
+
+
+
+	<textarea id="text">
+
+
+</textarea>
+
+	<div class="div1">
+		<h1 id="t1"> Message Box </h1>
+
+
+
+		<button onclick="count1()">send</button>
+
+
+	</div>
+
+
+
+
+
+
+</body>
+
+
+
+</html>

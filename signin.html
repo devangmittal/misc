@@ -1,0 +1,86 @@
+<html>
+
+<head>
+	<style>
+		.div1 {
+			border: 3px solid pink;
+			width: 350px;
+			margin: 100;
+		}
+	</style>
+
+
+	<script>
+		const signIn = () => {
+
+			let user = document.getElementById("t1").value;
+			let pas = document.getElementById("t2").value;
+
+
+
+			let pas1 = localStorage.getItem(user);
+			if (pas == pas1)
+			{
+				window.location.href = "question.html";
+				alert("valid");
+			}
+			else
+			{
+				alert("not valid");
+			}
+
+		}
+
+		const signUp = () => {
+			let user = document.getElementById("t1").value;
+			let pas = document.getElementById("t2").value;
+			localStorage.setItem(user, pas);
+		}
+		const removeUser = () => {
+			let user = document.getElementById("t1").value;
+			localStorage.removeItem(user);
+		}
+
+		const updatePass = () => {
+			alert("hi");
+			let user = document.getElementById("t1").value;
+			let pas = document.getElementById("t2").value;
+
+			let npas = document.getElementById("t3").value;
+
+			let pas1 = localStorage.getItem(user);
+			if (pas == pas1)
+			{
+				localStorage.setItem(user, npas);
+			}
+			else
+			{
+				alert("not valid");
+			}
+
+		}
+
+
+
+	</script>
+
+</head>
+
+<body>
+
+	<div class="div1">
+
+		<p>enter ur id <input type="text" id="t1"></p>
+		<p> enter ur password<input type="password" id="t2">
+		<p>enter new password <input type="text" id="t3">
+			<button onclick="signIn()">Sign in </button>
+			<button onclick="signUp()"> Sign Up</button>
+			<button onclick="removeUser()"> remove users </button>
+			<button onclick="updatePass()"> Update user password </button>
+	</div>
+
+</body>
+
+
+
+</html>

@@ -1,0 +1,44 @@
+<html>
+
+<head>
+
+	<style>
+		.div1 {
+			border: 3px solid pink;
+			width: 350px;
+			margin: 100;
+		}
+	</style>
+
+
+
+</head>
+
+<body>
+	<div class="div1">
+		<h1>Click button to change</h1>
+		<img id="bannerImage" /><br />
+		<button onclick="changeImage('apple.jpg')">apple</button>
+		<button onclick="changeImage('banana.jpg')">banana</button>
+		<button onclick="changeImage('orange.jpg')">watermelon</button>
+
+		<script>
+
+
+			function changeImage(fileName) {
+				let img = document.querySelector("#bannerImage");
+				img.setAttribute("src", fileName);
+			}
+
+		</script>
+
+
+	</div>
+
+
+
+</body>
+
+
+
+</html>

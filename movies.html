@@ -1,0 +1,126 @@
+<html>
+
+<head>
+	<style>
+		div {
+			border: 2px solid red;
+			width: 300px;
+			margin: 300;
+			padding: 20px;
+		}
+	</style>
+	<script>
+		let movies = [{ mName: "3 Idiots", nofS: 50, MBook: 0, duration: "3hrs", price: 200 },
+		{ mName: "Avatar", nofS: 100, MBook: 0, duration: "3hrs", price: 250 },
+		{ mName: "Frozen", nofS: 150, MBook: 0, duration: "3hrs", price: 300 },
+		{ mName: "RRR", nofS: 6, MBook: 0, duration: "3hrs", price: 350 },
+		{ mName: "U-Turn", nofS: 250, MBook: 0, duration: "3hrs", price: 400 }];
+
+
+		const bookTickets = () => {
+			let flag = false;
+			let nNM = document.getElementById("nm").value;
+
+			for (let i = 0; i < movies.length; i++)
+			{
+				if (movies[i].mName == nNM)
+				{
+					alert("yes you can book ");
+
+					let c = document.getElementById("not").value;// user want no of tickets 
+					let c1 = movies[i].MBook;  // no of tickets are sold 
+					let t = movies[i].nofS;  //  total no of seats 
+					let l = t - c;
+					if (t - c1 >= c)
+					{
+
+						movies[i] = { ...movies[i], MBook: c, nofS: l };
+						console.log(movies);
+						alert("Tickets booked ");
+					}
+					else
+					{
+						alert("No of tickets are not thre ....");
+					}
+
+
+
+
+
+					flag = true;
+					break;
+				}
+			}
+			if (flag == false)
+			{
+				alert("not in our list ")
+			}
+
+		}
+	</script>
+
+</head>
+
+
+
+
+
+
+
+<body>
+
+	<div>
+		<h1> Book tickets Movie </h1>
+		<input type="text" id="nm" placeholder="Movie name " />
+		<p> Number of Tickets
+			<select id="not">
+				<option>
+					1
+				</option>
+				<option>
+					2
+				</option>
+
+				<option>
+					3
+				</option>
+
+				<option>
+					4
+				</option>
+
+				<option>
+					5
+				</option>
+
+			</select>
+			<br>
+			<br>
+			<button onclick="bookTickets()"> Book Seats </button>
+
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+</html>

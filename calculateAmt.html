@@ -1,0 +1,54 @@
+<html>
+
+<head>
+	<style>
+		.div1 {
+			border: 3px solid pink;
+			width: 350px;
+			margin: 100;
+		}
+	</style>
+
+	<script>
+
+		let price = [100, 20, 40, 60, 40, 90, 80];
+		let code = [101, 102, 106, 111, 777, 999];
+		const calTotal = () => {
+			let iCode = parseInt(document.getElementById("t1").value);
+			let qty = parseInt(document.getElementById("t2").value);
+			let pos = code.indexOf(iCode);
+			if ((pos != -1))
+			{
+				let iPrice = price[pos];
+				document.getElementById("t3").innerHTML = iPrice;
+				document.getElementById("t4").innerHTML = iPrice * qty;
+			}
+			else
+			{
+				alert("Invalid Item Code. ");
+			}
+		}
+	</script>
+
+</head>
+
+<body>
+
+	<div class="div1">
+
+		<p> Item Code <input type="text" id="t1"></p>
+		<p> Item QTY <input type="text" id="t2"></p>
+		<p> Price
+		<p id="t3"></p>
+		</p>
+
+		<p>Total Amt
+		<p id="t4"></p>
+		</p>
+		<br>
+		<button onclick="calTotal()">Bill</button>
+	</div>
+
+</body>
+
+</html>

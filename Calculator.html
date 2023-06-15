@@ -1,0 +1,115 @@
+<html>
+
+<head>
+
+	<style>
+		.div1 {
+			border: 3px solid pink;
+			width: 350px;
+			margin: 100;
+		}
+	</style>
+
+	<script>
+		const calsal = () => {
+			//Salary entered by user.
+			let sal = parseInt(document.getElementById("sal").value);
+			// no. of leaves entered by user.
+			let tleave = parseInt(document.getElementById("leaves").value);
+
+
+			let cca = sal * 5 / 100;
+			document.getElementById("cca").value = cca;
+			let hra;
+			if (sal <= 5000)
+			{
+				hra = sal * 5 / 100;
+			} else
+			{
+				hra = sal * 10 / 100;
+			}
+			document.getElementById("hra").value = hra;
+			// DA
+			let da = 2000;
+			document.getElementById("da").value = da;
+
+			// PF
+			let pf = sal * 20 / 100;
+			document.getElementById("pf").value = pf;
+
+			//Gross Sal
+			let gsal = sal + da + cca + hra;
+			document.getElementById("gs").value = gsal;
+
+			// Leave amt
+			let leaveamt = Math.round(gsal / 30) * tleave;
+			document.getElementById("leaveamt").value = leaveamt;
+
+			// Net Sal
+			let netsal = gsal - pf - leaveamt;
+			document.getElementById("netsal").value = netsal;
+
+
+		}
+	</script>
+
+</head>
+
+<body>
+
+	<div class="div1">
+		<h1>Salary Calculator</h1>
+		<div>enter ur Salary
+			<input type="text" id="sal">
+		</div>
+		<br>
+
+		<div>CCA(5%)
+			<input type="text" id="cca">
+		</div>
+		<br>
+
+		<div>HRA(<=5000 5% or 10%) <input type="text" id="hra">
+		</div>
+		<br>
+
+		<div>DA(2000)
+			<input type="text" id="da">
+		</div>
+		<br>
+
+		<div>No Of Leaves
+			<input type="text" id="leaves">
+		</div>
+		<br>
+
+		<div>Leaves Amount (gs/30*leaves)
+			<input type="text" id="leaveamt">
+		</div>
+		<br>
+
+		<div>PF(20%)
+			<input type="text" id="pf">
+		</div>
+		<br>
+
+		<div>GS(sal + cca+hra+da)
+			<input type="text" id="gs">
+		</div>
+		<br>
+
+		<div>Net Salary (gs - pf-leave amt)
+			<input type="text" id="netsal">
+		</div>
+		<br>
+
+		<br>
+		<br>
+
+		<button onclick="calsal()"> Cal Sal</button>
+
+	</div>
+
+</body>
+
+</html>

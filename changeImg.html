@@ -1,0 +1,59 @@
+<html>
+
+<head>
+	<style>
+		.div1 {
+			border: 3px solid pink;
+			width: 450px;
+			margin: 100;
+		}
+
+		.pic {
+			width: 300px;
+			height: 300px;
+		}
+	</style>
+
+	<script>
+
+
+		let fruit = ["apple.jpg", "banana.jpg", "orange.jpg"];
+		let c = 0;
+
+		const Next = () => {
+			if (c == fruit.length - 1)
+			{
+				c = -1;
+			}
+			c++;
+			document.getElementById("pic").src = fruit[c];
+
+
+		}
+		const pre = () => {
+			if (c == 0)
+			{
+				c = fruit.length;
+			}
+			c--;
+			console.log(c);
+			document.getElementById("pic").src = fruit[c];
+
+		}
+
+	</script>
+</head>
+
+<body>
+	<div class="div1">
+		<table>
+			<tr>
+				<td><button onclick="pre()"> PRE</button></td>
+				<td><img class="pic" src="apple.jpg" id="pic"></td>
+				<td><button onclick="Next()"> NEXT</button></td>
+		</table>
+	</div>
+
+</body>
+
+</html>

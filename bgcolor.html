@@ -1,0 +1,97 @@
+<html>
+
+<head>
+	<style>
+		.div1 {
+			border: 3px solid pink;
+			width: 350px;
+			margin: 100;
+			position: relative;
+		}
+
+		.center {
+			text-align: center;
+		}
+
+		table {
+			table-layout: fixed;
+			width: -webkit-fill-available;
+			text-align: center;
+		}
+
+		.divcenter {
+			position: relative;
+			left: 25%;
+
+		}
+
+		img {
+			max-width: 100px;
+			max-height: 250px;
+		}
+	</style>
+
+	<script>
+		const changeBG = (c) => {
+			document.getElementById("bg").style.color = c;
+		}
+
+		const displayImg = (event) => {
+			document.getElementById("img").setAttribute("src", event);
+
+		}
+		const changeImage = () => {
+			document.getElementById("test").setAttribute("src", "banana.jpg");
+		}
+
+		const bringImg = () => {
+			document.getElementById("test").setAttribute("src", "apple.jpg");
+		}
+	</script>
+
+</head>
+
+<body>
+
+	<div class="div1">
+		<div id="bg" class="center">
+			<h1>FSD04 BATCH</h1>
+		</div>
+		<div>
+			<table>
+				<tr>
+					<td>
+						<img id="img">
+					</td>
+				</tr>
+			</table>
+
+		</div>
+		<div>
+			<img onmouseover="changeImage()" onmouseout="bringImg()" id="test" src="apple.jpg" />
+		</div>
+		<div>
+			<button onclick="changeBG('red')"> RED</button>
+			<button onclick="changeBG('pink')"> pink</button>
+			<button onclick="changeBG('blue')"> blue</button>
+			<button onclick="changeBG('darkgreen')"> Dark Green</button>
+			<button onclick="changeBG('yellow')"> yellow</button>
+			<button onclick="changeBG('green')"> green </button>
+		</div>
+		<div class="divcenter">
+			<button onclick="displayImg('apple.jpg')"> Apple </button>
+			<button onclick="displayImg('banana.jpg')"> Banana </button>
+			<button onclick="displayImg('orange.jpg')"> Orange</button>
+		</div>
+	</div>
+
+
+
+
+
+
+</body>
+
+
+
+</html>

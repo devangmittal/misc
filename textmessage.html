@@ -1,0 +1,53 @@
+<html>
+
+<head>
+	<style>
+		.div1 {
+			border: 2px solid pink;
+			width: 380px;
+			margin: 100;
+		}
+	</style>
+
+	<script>
+		const sendMessage = (message) => {
+			let textMessage;
+
+			if (message == "person1")
+			{
+				textMessage = document.getElementById("person1").value;
+				document.getElementById("person1").value = "";
+				document.getElementById("person2").value = textMessage;
+			} else if (message == "person2")
+			{
+				textMessage = document.getElementById("person2").value;
+				document.getElementById("person2").value = "";
+				document.getElementById("person1").value = textMessage;
+			}
+		}
+	</script>
+
+</head>
+
+<body>
+
+	<div class="div1">
+		<h1 id="t1"> Person 1 </h1>
+
+		<textarea cols="40" row="100" id="person1"></textarea>
+		<br>
+		<button onclick="sendMessage('person1')">send</button>
+
+	</div>
+	<div class="div1">
+		<h1 id="t1"> Person 2 </h1>
+
+		<textarea cols="40" row="100" id="person2"></textarea>
+
+		<br>
+		<button onclick="sendMessage('person2')">send</button>
+
+	</div>
+</body>
+
+</html>

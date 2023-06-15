@@ -1,0 +1,95 @@
+<html>
+
+<head>
+	<style>
+		.div1 {
+			border: 2px solid red;
+			width: 300px;
+			margin: 300;
+			padding: 20px;
+		}
+	</style>
+	<script>
+		let lang = ["java", "c++", "python", "dbms", "react", "mongoDB"];
+		let selected = [];
+		let temp;
+
+		const begin = () => {
+			document.getElementById("guess").style.display = "none";
+			document.getElementById("t1").style.display = "none";
+
+		}
+		const start = () => {
+			let guessed = Math.floor(Math.random() * lang.length);
+			temp = lang[guessed];
+			let jumbleword = jumble(temp);
+			document.getElementById("r1").innerHTML = jumbleword;
+
+			document.getElementById("start").style.display = "none";
+			document.getElementById("guess").style.display = "revert";
+			document.getElementById("t1").style.display = "revert";
+
+		}
+
+		const jumble = (temp) => {
+			let jumble = "";
+			while (jumble.length < temp.length)
+			{
+				let r = Math.floor(Math.random() * temp.length);
+				if (!selected.includes(r))
+				{
+					console.log(temp[r]);
+					selected.push(r);
+					jumble = jumble + temp[r];
+				}
+			}
+			return jumble;
+		}
+
+		const guess = () => {
+			let word = document.getElementById("t1").value;
+			if (word == temp)
+			{
+				alert("You guessed it right");
+			} else
+			{
+				alert("Oh no You guessed it Wrong. Try Again.");
+			}
+
+			document.getElementById("start").style.display = "revert";
+			document.getElementById("guess").style.display = "none";
+			document.getElementById("t1").style.display = "none";
+			document.getElementById("t1").value = "";
+			document.getElementById("r1").innerHTML = "";
+			selected = [];
+
+
+		}
+
+	</script>
+
+
+</head>
+
+<body onload="begin()">
+	<div class="div1">
+		<h1 id="r1"> </h1>
+
+		<input type="text" id="t1">
+		<br>
+
+		<button id="start" onclick="start()">
+			Start
+		</button>
+		<button id="guess" onclick="guess()">Guess </button>
+	</div>
+
+
+
+
+</body>
+
+
+
+
+</html>
